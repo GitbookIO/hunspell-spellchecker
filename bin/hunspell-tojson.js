@@ -8,6 +8,11 @@ var Spellchecker = require("../lib");
 var input = path.resolve(process.cwd(), process.argv[2]);
 var sp = new Spellchecker();
 
+
+console.log("Start converting:");
+console.log("\tAFF:", input+".aff");
+console.log("\tDIC:", input+".dic");
+
 var DICT = sp.parse({
     dic: fs.readFileSync(input+".dic", { encoding: "utf8" }),
     aff: fs.readFileSync(input+".aff", { encoding: "utf8" })
@@ -15,5 +20,5 @@ var DICT = sp.parse({
 
 fs.writeFileSync(input+".json", JSON.stringify(DICT));
 
-console.log("Dicitonary written in ", input+".json");
+console.log("Dictionary written in ", input+".json");
 
