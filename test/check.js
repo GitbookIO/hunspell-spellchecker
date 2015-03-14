@@ -17,6 +17,10 @@ describe("Dictionary", function() {
         assert(sp.check("hello"));
     });
 
+    it("should correctly signal a correct word (UPPERCASE)", function() {
+        assert(sp.check("HELLO"));
+    });
+
     it("should correctly signal an invalid word", function() {
         assert(!sp.check("helo"));
     });
