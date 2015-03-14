@@ -15,4 +15,5 @@ var DICT = sp.parse({
 
 fs.writeFileSync(input+".json", JSON.stringify(DICT));
 
+console.log("Dicitonary written in ", input+".json");
 
