@@ -1,16 +1,20 @@
 var fs = require("fs");
 var path = require("path");
+var assert = require("assert");
 
-var Spellchecker = require("../lib");
+var Dictionary = require("../lib/dictionary");
 
-describe("Parse", function() {
+describe("Dictionary", function() {
     it("should parse correctly an hunspell dictionary", function() {
-        var sp = new Spellchecker();
+        var sp = new Dictionary();
 
-        var DICT = sp.parse({
+        sp.parse({
             dic: fs.readFileSync(path.resolve(__dirname, "fixtures/test.dic")),
             aff: fs.readFileSync(path.resolve(__dirname, "fixtures/test.aff"))
         });
-        console.log(DICT);
+
+        var DICT = sp.toJSON();
+        assert(DICT.rules);
+        assert(DICT.dictionaryTable);
     });
 });
