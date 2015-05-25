@@ -1,6 +1,6 @@
 {
     "name": "hunspell-spellchecker",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/GitbookIO/hunspell-spellchecker",
     "description": "Parse and use Hunspell dictionaries in Javascript",
     "main": "lib/index.js",
