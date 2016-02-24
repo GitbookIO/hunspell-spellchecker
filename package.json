@@ -17,6 +17,7 @@
   },
   "scripts": {
     "test": "mocha --reporter spec --recursive --bail",
+    "perf": "node perf/perf.js",
     "prepublish": "gulp"
   },
   "bin": {
