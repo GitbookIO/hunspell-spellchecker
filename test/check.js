@@ -1,6 +1,7 @@
 var fs = require("fs");
 var path = require("path");
 var assert = require("assert");
+var expect = require("expect");
 
 var Spellcheck = require("../lib");
 
@@ -23,5 +24,9 @@ describe("Dictionary", function() {
 
     it("should correctly signal an invalid word", function() {
         assert(!sp.check("helo"));
+    });
+
+    it("should correctly suggest corrections for an invalid word", function() {
+        expect(sp.suggest("helo")).toEqual(["hello"]);
     });
 });
