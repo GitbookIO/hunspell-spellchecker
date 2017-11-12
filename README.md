@@ -26,7 +26,7 @@ Parse and serialize a dictionary
 ```js
 // Parse an hunspell dictionary that can be serialized as JSON
 var DICT = spellchecker.parse({
-    aff: fs.readFileSync("./en_EN.aff");
+    aff: fs.readFileSync("./en_EN.aff"),
     dic: fs.readFileSync("./en_EN.dic")
 });
 ```
