@@ -12,6 +12,20 @@ describe("Dictionary", function() {
         aff: fs.readFileSync(path.resolve(__dirname, "fixtures/test.aff"))
     });
 
+    it("should return suggestions", function() {
+        function uniq(array) {
+            return Array.from(new Set(array));
+        }
+
+        // character replaced
+        assert.deepEqual(uniq(sp.dict.findSimilarWords("hellp", 1)), ["hello"]);
+        // character added
+        assert.deepEqual(uniq(sp.dict.findSimilarWords("hellos", 1)), ["hello"]);
+        // character removed
+        assert.deepEqual(uniq(sp.dict.findSimilarWords("helo", 1)), ["hello"]);
+        // characters transposed
+        assert.deepEqual(uniq(sp.dict.findSimilarWords("hlelo", 1)), ["hello"]);
+    });
 
     it("should correctly signal a correct word", function() {
         assert(sp.check("hello"));
