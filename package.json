@@ -4,9 +4,7 @@
     "homepage": "https://github.com/GitbookIO/hunspell-spellchecker",
     "description": "Parse and use Hunspell dictionaries in Javascript",
     "main": "lib/index.js",
-    "dependencies": {
-
-    },
+    "dependencies": {},
     "devDependencies": {
         "mocha": "2.2.1",
         "gulp": "3.8.11",
