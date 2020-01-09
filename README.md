@@ -44,3 +44,6 @@ Check a word:
 // Check a word
 var isRight = spellchecker.check("tll");
 ```
+
+### License
+Copyright 2019 Samy Pessé <samypesse@gmail.com>
